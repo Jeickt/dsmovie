@@ -12,7 +12,7 @@ type Props = {
 
 function FormCard({ movieId }: Props) {
   const navigate = useNavigate();
-  const id = movieId;
+  const id: string = movieId;
   const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
@@ -23,8 +23,8 @@ function FormCard({ movieId }: Props) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const email = (event.target as any).email.value;
-    const score = (event.target as any).score.value;
+    const email: string = (event.target as any).email.value;
+    const score: string = (event.target as any).score.value;
 
     if (!validateEmail(email)) {
       return;
