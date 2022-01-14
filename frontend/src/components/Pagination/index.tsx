@@ -5,7 +5,7 @@ import { MoviePage } from 'types/movie';
 
 type Props = {
   page: MoviePage;
-  onChange: () => void;
+  onChange: (pageNumber: number) => void;
 };
 
 function Pagination({ page, onChange }: Props) {
