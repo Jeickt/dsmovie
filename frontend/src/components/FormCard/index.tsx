@@ -12,7 +12,7 @@ type Props = {
 
 function FormCard({ movieId }: Props) {
   const navigate = useNavigate();
-  const [id, setId] = useState(movieId);
+  const [id, _] = useState(movieId);
   const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
