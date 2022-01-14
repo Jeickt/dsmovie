@@ -12,14 +12,14 @@ type Props = {
 
 function FormCard({ movieId }: Props) {
   const navigate = useNavigate();
-  const id: string = movieId;
+  const [id, setId] = useState(movieId);
   const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
     axios.get(`${BASE_URL}/movies/${id}`).then((response) => {
       setMovie(response.data);
     });
-  }, []);
+  }, [id]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
